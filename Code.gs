@@ -64,7 +64,7 @@
 
 var APP = {
   NAME: 'BLACK BRAND API',
-  VERSION: '1.6.0',
+  VERSION: '1.6.1',
   TZ: 'Asia/Colombo',
   SESSION_HOURS: 8,
   SETUP_SESSION_MINUTES: 20,
@@ -164,7 +164,7 @@ var NONNEG_COLUMNS = {
 };
 
 // Columns stored as plain text so phone numbers, IDs and dates are never re-interpreted by Sheets.
-var TEXT_HEADERS = ['Phone Number', 'Postal Code', 'SKU', 'Tracking Number', 'Transaction Reference', 'Date', 'Sale Date',
+var TEXT_HEADERS = ['Phone Number', 'Postal Code', 'SKU', 'Size', 'Color', 'Variant Price', 'Tracking Number', 'Transaction Reference', 'Date', 'Sale Date',
   'Order Date', 'Payment Date', 'Registration Date', 'Created Date', 'Subscription Date', 'Start Date', 'Expiry Date',
   'End Date', 'Last Updated', 'Last Calculated', 'Product IDs', 'Setting Value'];
 
@@ -922,7 +922,7 @@ function publicProducts_() {
     var vs = byProd[p['Product ID']] || [];
     if (!vs.length) return;
     var pv = vs.map(function (v) {
-      return { variantId: v['Variant ID'], size: v['Size'], color: v['Color'], price: effectivePrice_(p, v), availableQuantity: Math.max(0, num_(v['Available Quantity'])), imageUrl: v['Variant Image URL'] || '' };
+      return { variantId: v['Variant ID'], size: String(v['Size']).trim(), color: String(v['Color']).trim(), price: effectivePrice_(p, v), availableQuantity: Math.max(0, num_(v['Available Quantity'])), imageUrl: v['Variant Image URL'] || '' };
     });
     var prices = pv.map(function (v) { return v.price; });
     var reg = num_(p['Regular Price']), sale = num_(p['Sale Price']);

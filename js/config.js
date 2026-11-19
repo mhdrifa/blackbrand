@@ -3,9 +3,10 @@ window.BB_CONFIG = {
   // Deployed Google Apps Script Web App (Code.gs)
   API_URL: "https://script.google.com/macros/s/AKfycbwApeG0HlQBDfcmqAbfdla_l3Ahm244Auv78k0wcfA4pfF85gHIz9xqvhpn5_jMwYQ-/exec",
 
-  WHATSAPP_URL: "https://wa.me/94750789338",
-  PHONE_DISPLAY: "+94 75 078 9338",
-  PHONE_TEL: "+94750789338",
+  WHATSAPP_URL: "https://wa.me/message/IFADOYDEKWLEA1",
+  WHATSAPP_NUMBER: "94770498004",
+  PHONE_DISPLAY: "+94 77 049 8004",
+  PHONE_TEL: "+94770498004",
 
   // Customer sign-in uses Firebase Authentication (passwords never reach Google Sheets or Apps Script).
   // Paste your Firebase Web App config here to enable customer login/registration:

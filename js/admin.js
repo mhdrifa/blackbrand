@@ -75,7 +75,7 @@ var MENU = [
 var OWNER_ONLY = ['staff', 'settings'];
 function shell() {
   var role = A.staff.role;
-  $('#root').innerHTML = '<div class="shell"><aside class="side" id="side"><div class="logo">BLACK BRAND<small>ADMIN CONSOLE</small></div>' +
+  $('#root').innerHTML = '<div class="shell"><aside class="side" id="side"><div class="logo"><img src="assets/logo.png" alt="" width="36" height="36" style="vertical-align:middle;margin-right:8px;background:#000">BLACK BRAND<small>ADMIN CONSOLE</small></div>' +
     MENU.filter(function (m) { return m[0] === '' || (OWNER_ONLY.indexOf(m[0]) < 0 || role === 'owner') && !(role === 'staff' && ['dashboard', 'analytics', 'payments', 'customers', 'coupons', 'marketing', 'banners', 'reports', 'activity', 'categories', 'collections', 'product/new', 'products'].indexOf(m[0]) >= 0); })
       .map(function (m) { return m[0] === '' ? '<div class="grp">' + m[1] + '</div>' : '<a href="#/' + m[0] + '" data-r="' + m[0] + '">' + m[1] + '</a>'; }).join('') +
     '<div style="margin-top:auto;padding:16px 20px"><a href="index.html" style="padding:0;color:#8b8d8d">← View storefront</a></div></aside>' +
